@@ -1,4 +1,4 @@
-version: '3'
+version: '4'
 services:
   
   backend:
@@ -21,6 +21,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: mydb
+        
     volumes:
       - ./message.sql:/docker-entrypoint-initdb.d/message.sql   # Mount SQL script into container's /docker-entrypoint-initdb.d directory to get table automatically created
       - mysql-data:/var/lib/mysql  # Mount the volume for MySQL data storage
